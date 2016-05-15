@@ -28,6 +28,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
      super
    end
 
+   def approve
+    @user = User.find_by_id(params[:id])
+    @user.update_attribute(:approved, true)
+    redirect_to root_path
+  end
+
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to

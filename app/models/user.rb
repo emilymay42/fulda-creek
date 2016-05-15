@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-   # after_create :send_admin_mail
+   after_create :send_admin_mail
 
 	def active_for_authentication?
 		super && approved?

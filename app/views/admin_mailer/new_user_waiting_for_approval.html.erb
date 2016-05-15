@@ -1,1 +1,4 @@
-<p> A new user has signed up with Fulda Creek. <p>
+<p> A new user has signed up with Fulda Creek.
+	Their email address is <%= @user.email %>.
+	Approve their account <%= link_to 'here', approve_user_url(@user)%>.
+</p>
